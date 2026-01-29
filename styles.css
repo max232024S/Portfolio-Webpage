@@ -168,6 +168,19 @@ body {
     color: #6b7280;
     animation: fadeInUp 1s ease-out 0.4s both;
 }
+.button{
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(90deg, #10b981, #06b6d4);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
 
 .btn {
     display: inline-block;
@@ -201,6 +214,37 @@ body {
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.btn-secondary {
+    background: rgba(16, 185, 129, 0.1);
+    border: 2px solid #10b981;
+    color: #10b981;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-secondary:hover {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: #06b6d4;
+    color: #06b6d4;
+}
+
+.download-icon {
+    transition: transform 0.3s;
+}
+
+.btn-secondary:hover .download-icon {
+    transform: translateY(2px);
 }
 
 /* Section Styles */
@@ -257,6 +301,8 @@ body {
     transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card::before {
@@ -545,4 +591,9 @@ body {
     .section {
         padding: 3rem 1rem;
     }
+}
+.projectbtn{
+    margin-top: auto;
+    padding-top: 1.5rem;
+    text-align: center;
 }
