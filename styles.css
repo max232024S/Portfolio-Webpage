@@ -471,6 +471,15 @@ body {
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s;
 }
+.headshot{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;   /* circular */
+    object-fit: cover;   /* no stretching */
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    margin: 0 auto;
+    display: block;
+}
 
 .contact-link:hover::before {
     left: 100%;
