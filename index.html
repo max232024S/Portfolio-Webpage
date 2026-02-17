@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maxwell Brooks - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Scroll Progress Bar -->
@@ -27,7 +30,7 @@
     <section id="home" class="hero">
         <canvas id="particles"></canvas>
         <div class="hero-content">
-            <h1>Hi, I'm <span class="highlight">Max</span></h1>
+            <h1 class="typed-heading"><span class="typed-text"></span><span class="cursor">|</span></h1>
             <p class="hero-subtitle">Computer Science Student | Data-Centric Computing | ML Enthusiast</p>
             <p class="hero-description">Building streamlined solutions</p>
             <div class="hero-buttons">
@@ -330,6 +333,37 @@
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         });
+
+        // Typing Animation
+        (function() {
+            const textEl = document.querySelector('.typed-text');
+            const cursorEl = document.querySelector('.cursor');
+            const fullText = "Hi, I'm Max";
+            const highlightStart = fullText.indexOf('Max');
+            let i = 0;
+
+            function type() {
+                if (i <= fullText.length) {
+                    let html = '';
+                    const current = fullText.substring(0, i);
+
+                    if (i > highlightStart) {
+                        html = current.substring(0, highlightStart) +
+                               '<span class="highlight">' +
+                               current.substring(highlightStart) +
+                               '</span>';
+                    } else {
+                        html = current;
+                    }
+
+                    textEl.innerHTML = html;
+                    i++;
+                    setTimeout(type, 100);
+                }
+            }
+
+            setTimeout(type, 600);
+        })();
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
